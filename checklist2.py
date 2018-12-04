@@ -31,8 +31,7 @@ def list_all_items():
         index += 1
 
 def user_input(prompt):
-    # the input function will display a message in the terminal
-    # and wait for user input.
+    # the input function will display a message in the terminal and wait for user input.
     return input(prompt).upper()
 
 def select(function_code):
@@ -41,28 +40,34 @@ def select(function_code):
         input_item = user_input("Input item: ")
         create(input_item)
         return True
+
     # Read item
     elif function_code == "R":
         item_index = user_input("Index Number? ")
         # Remember that item_index must exsit or it will crash.
         read(int(item_index))
         return True
+
     elif function_code == "U":
         item_index = user_input("Index Number? ")
         input_item = user_input("Edit item: ")
         update(int(item_index), input_item)
         return True
+
     elif function_code == "D":
         item_index = user_input("Index Number? ")
         destroy(int(item_index))
         return True
+
     # Print all items
     elif function_code == "P":
         list_all_items()
         return True
-    #Quit game
+
+    #Quit
     elif function_code == "Q":
         return False
+
     # Catch all
     else:
         print("Unknown Option")
