@@ -8,6 +8,7 @@ def create(item):
     checklist.append(item)
 
 def read(index):
+    print(checklist[index])
     return checklist[index]
 
 # checklist = ['blue', 'orange']
